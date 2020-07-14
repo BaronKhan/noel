@@ -38,6 +38,7 @@ private:
   static Bot s_bot;
   Bot() = default;
 
+  void demo();
   void updateState();
   void setPosition(const Point & p);
   void resetLegs(const int value = 90);

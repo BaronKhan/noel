@@ -21,6 +21,38 @@ void Bot::setup(BotParameters && parameters)
   m_legs_middle.m_pin = m_parameters.legs_middle_pin;
   m_legs_right.m_pin  = m_parameters.legs_right_pin;
   resetLegs();
+
+//  demo();
+}
+
+//-----------------------------------------------------------------------------
+
+void Bot::demo()
+{
+  for (int i=0; i<6; ++i)
+    moveForwards();
+
+  delay(1000);
+
+  for (int i=0; i<4; ++i)
+    moveBackwards();
+
+  delay(1000);
+
+  for (int i=0; i<3; ++i)
+    turnLeft();
+
+  delay(1000);
+
+  for (int i=0; i<6; ++i)
+    turnRight();
+
+  delay(1000);
+
+  for (int i=0; i<2; ++i)
+    turnLeft();
+
+  resetLegs();
 }
 
 //-----------------------------------------------------------------------------
