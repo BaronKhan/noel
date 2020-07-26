@@ -1,5 +1,6 @@
 // noel.ino
-// Requires C++17
+// Requires C++17 (build with std=c++17)
+// Arduino Nano (ATmega328P)
 
 #include "noel.hpp"
 #include "cpp4arduino.hpp"
@@ -15,9 +16,9 @@ void setup()
   {
     .movement_speed  = 5,
     .start_state     = Idle,
-    .legs_left_pin   = 6,
+    .legs_left_pin   = 11,
     .legs_middle_pin = 9,
-    .legs_right_pin  = 11
+    .legs_right_pin  = 6
   };
   Bot::getInstance().setup(move(parameters));
 

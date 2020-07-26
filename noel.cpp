@@ -1,4 +1,5 @@
 // noel.cpp
+// Nimble On Extended Legs
 
 #include "noel.hpp"
 #include "Arduino.h"
@@ -155,19 +156,19 @@ void Bot::moveBot(arx::vector<int, 4> && values)
     }
   }
   delay(delay_time);
-  for (auto & legs : m_legs)
-    legs.m_servo.detach();
+//  for (auto & legs : m_legs)
+//    legs.m_servo.detach();
 }
 
 //-----------------------------------------------------------------------------
 
 void Bot::moveForwards(const int speedup)
 {
-  moveBot({-1, 105, -1});
+  moveBot({-1, 125, -1});
   moveBot({105+speedup, -1, 105+speedup});
   moveBot({-1, 90, -1});
-  moveBot({-1, 75, -1});
-  moveBot({50-speedup, -1, 75-speedup});
+  moveBot({-1, 55, -1});
+  moveBot({75-speedup, -1, 75-speedup});
   moveBot({-1, 90, -1});
 }
 
@@ -175,10 +176,10 @@ void Bot::moveForwards(const int speedup)
 
 void Bot::moveBackwards(const int speedup)
 {
-  moveBot({-1, 105, -1});
-  moveBot({50-speedup, -1, 75-speedup});
+  moveBot({-1, 125, -1});
+  moveBot({75-speedup, -1, 75-speedup});
   moveBot({-1, 90, -1});
-  moveBot({-1, 75, -1});
+  moveBot({-1, 55, -1});
   moveBot({105+speedup, -1, 105+speedup});
   moveBot({-1, 90, -1});
 }
@@ -187,10 +188,10 @@ void Bot::moveBackwards(const int speedup)
 
 void Bot::turnLeft(const int speedup)
 {
-  moveBot({-1, 105, -1});
+  moveBot({-1, 120, -1});
   moveBot({75-speedup, -1, 105+speedup});
   moveBot({-1, 90, -1});
-  moveBot({-1, 75, -1});
+  moveBot({-1, 60, -1});
   moveBot({105+speedup, -1, 75-speedup});
   moveBot({-1, 90, -1});
 }
@@ -199,10 +200,10 @@ void Bot::turnLeft(const int speedup)
 
 void Bot::turnRight(const int speedup)
 {
-  moveBot({-1, 105, -1});
+  moveBot({-1, 120, -1});
   moveBot({105+speedup, -1, 75-speedup});
   moveBot({-1, 90, -1});
-  moveBot({-1, 75, -1});
+  moveBot({-1, 60, -1});
   moveBot({75-speedup, -1, 105+speedup});
   moveBot({-1, 90, -1});
 }
@@ -211,8 +212,8 @@ void Bot::turnRight(const int speedup)
 
 void Bot::jump()
 {
-  moveBot({90, 150, 90});
-  moveBot({-1, 30, -1});
+  moveBot({90, 120, 90});
+  moveBot({-1, 60, -1});
   moveBot({-1, 90, -1});
 }
 
@@ -220,14 +221,14 @@ void Bot::jump()
 
 void Bot::strafeLeft(const int speedup)
 {
-  moveBot({-1, 130, -1});
+  moveBot({-1, 120, -1});
 }
 
 //-----------------------------------------------------------------------------
 
 void Bot::strafeRight(const int speedup)
 {
-  moveBot({-1, 50, -1});
+  moveBot({-1, 60, -1});
 }
 
 //-----------------------------------------------------------------------------
